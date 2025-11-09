@@ -1,14 +1,14 @@
-# PixelCrafted Ecommerce Website
+# PixelCrafted.uk Studio Site
 
-PixelCrafted is a modern, responsive landing page for a digital branding studio. It is built with semantic HTML, modern CSS, and a small amount of vanilla JavaScript for interactivity.
+PixelCrafted.uk is a modern, responsive landing page for a studio that builds websites, logo systems, and business idea playbooks. It is built with semantic HTML, modern CSS, and a small amount of vanilla JavaScript for interactivity.
 
 ## Features
 
-- Hero section with clear calls-to-action
-- Curated branding kit highlights and new arrivals grid
+- Hero section focused on websites, logos, and business idea consulting
+- Signature service highlights and filterable package grid
 - Category filters with animated chip states
-- Interactive product cards and lightweight cart counter
-- Newsletter signup experience with inline confirmation message
+- Interactive package cards and lightweight cart counter
+- Project briefing form with inline confirmation message that references contact@pixelcrafted.uk
 - Mobile navigation with accessible toggle
 - Responsive layout that adapts from large desktop to mobile devices
 
@@ -43,4 +43,4 @@ Then open your browser to [http://localhost:8000](http://localhost:8000) to expl
 - Swap the Unsplash image URLs for your own assets.
 - Adjust the color system in `:root` within `assets/css/style.css` to re-theme the site.
 
-Enjoy crafting your next launch with PixelCrafted!
+Enjoy planning your next launch with PixelCrafted.uk!

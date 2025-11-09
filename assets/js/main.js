@@ -1,57 +1,57 @@
 const products = [
   {
-    id: 'monochrome-suite',
-    name: 'Monochrome Signature Suite',
-    price: 620,
+    id: 'launch-website',
+    name: 'Launch Website Accelerator',
+    price: 4200,
+    rating: 5.0,
+    reviews: 68,
+    category: 'websites',
+    image: 'https://images.unsplash.com/photo-1487015307662-6ce6210680f1?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    id: 'conversion-commerce',
+    name: 'Conversion Commerce Build',
+    price: 5600,
     rating: 4.9,
-    reviews: 184,
+    reviews: 54,
+    category: 'websites',
+    image: 'https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    id: 'signature-logo',
+    name: 'Signature Logo Lab',
+    price: 1800,
+    rating: 4.8,
+    reviews: 132,
+    category: 'branding',
+    image: 'https://images.unsplash.com/photo-1522199997878-95f2072e0b83?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    id: 'brand-guidelines',
+    name: 'Brand Guideline Suite',
+    price: 2400,
+    rating: 4.9,
+    reviews: 97,
     category: 'branding',
     image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80',
   },
   {
-    id: 'launchpad-web',
-    name: 'Launchpad Web Experience',
-    price: 880,
-    rating: 4.8,
-    reviews: 96,
-    category: 'web',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 'social-surge',
-    name: 'Social Surge Template Pack',
-    price: 280,
+    id: 'idea-lab',
+    name: 'Idea Validation Lab',
+    price: 1450,
     rating: 4.7,
-    reviews: 141,
-    category: 'social',
-    image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80',
+    reviews: 88,
+    category: 'strategy',
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80',
   },
   {
-    id: 'type-foundry',
-    name: 'Type Foundry Starter Kit',
-    price: 360,
-    rating: 5.0,
-    reviews: 52,
-    category: 'branding',
-    image: 'https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 'immersive-ui',
-    name: 'Immersive UI Wireframe Library',
-    price: 420,
-    rating: 4.6,
-    reviews: 218,
-    category: 'web',
-    image: 'https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 'creator-toolkit',
-    name: 'Creator Launch Toolkit',
-    price: 320,
+    id: 'pitch-ready',
+    name: 'Pitch &amp; Funding System',
+    price: 2100,
     rating: 4.9,
-    reviews: 121,
-    category: 'social',
-    image: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80',
+    reviews: 113,
+    category: 'strategy',
+    image: 'https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=900&q=80',
   },
 ];
 
@@ -66,10 +66,17 @@ const cartCountBadge = document.querySelector('[data-cart-count]');
 const yearEl = document.querySelector('[data-year]');
 const navToggle = document.querySelector('.nav-toggle');
 const navList = document.querySelector('#nav-links');
+const navLinks = document.querySelectorAll('#nav-links a');
 const newsletterForm = document.querySelector('.newsletter-form');
 const feedbackEl = document.querySelector('.form-feedback');
 
-const formatPrice = (value) => `$${value.toFixed(0)}`;
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0,
+});
+
+const formatPrice = (value) => currencyFormatter.format(value);
 
 const renderProducts = () => {
   const filtered = products.filter((product) => state.filter === 'all' || product.category === state.filter);
@@ -128,6 +135,11 @@ const handleProductClick = (event) => {
   }, 1200);
 };
 
+const closeNav = () => {
+  navList.classList.remove('is-open');
+  navToggle.setAttribute('aria-expanded', 'false');
+};
+
 const handleNavToggle = () => {
   const isOpen = navList.classList.toggle('is-open');
   navToggle.setAttribute('aria-expanded', String(isOpen));
@@ -138,7 +150,7 @@ const handleNewsletterSubmit = (event) => {
   const formData = new FormData(newsletterForm);
   const email = formData.get('email');
 
-  feedbackEl.textContent = `Welcome aboard, ${email}! Your PixelCrafted resources are on their way.`;
+  feedbackEl.textContent = `Thanks, ${email}! We'll follow up from contact@pixelcrafted.uk shortly.`;
   newsletterForm.reset();
 };
 
@@ -149,5 +161,19 @@ filterChips.forEach((chip) => chip.addEventListener('click', handleFilterClick))
 productGrid.addEventListener('click', handleProductClick);
 navToggle.addEventListener('click', handleNavToggle);
 newsletterForm.addEventListener('submit', handleNewsletterSubmit);
+
+navLinks.forEach((link) =>
+  link.addEventListener('click', () => {
+    if (navList.classList.contains('is-open')) {
+      closeNav();
+    }
+  }),
+);
+
+document.addEventListener('keyup', (event) => {
+  if (event.key === 'Escape') {
+    closeNav();
+  }
+});
 
 yearEl.textContent = new Date().getFullYear();
