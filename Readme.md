@@ -9,7 +9,7 @@ PixelCrafted.uk is a modern, responsive landing page for a studio that builds we
 - Category filters with animated chip states
 - Interactive package cards and lightweight cart counter
 - Project briefing form with inline confirmation message that references contact@pixelcrafted.uk
-- Mobile navigation with accessible toggle
+- Mobile navigation with accessible toggle, outside-click dismissal, and focus-safe states
 - Responsive layout that adapts from large desktop to mobile devices
 
 ## Getting started

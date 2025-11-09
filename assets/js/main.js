@@ -135,14 +135,18 @@ const handleProductClick = (event) => {
   }, 1200);
 };
 
-const closeNav = () => {
-  navList.classList.remove('is-open');
-  navToggle.setAttribute('aria-expanded', 'false');
+const setNavState = (isOpen) => {
+  navList.classList.toggle('is-open', isOpen);
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+  navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+  document.body.classList.toggle('nav-open', isOpen);
 };
 
+const closeNav = () => setNavState(false);
+
 const handleNavToggle = () => {
-  const isOpen = navList.classList.toggle('is-open');
-  navToggle.setAttribute('aria-expanded', String(isOpen));
+  const isOpen = !navList.classList.contains('is-open');
+  setNavState(isOpen);
 };
 
 const handleNewsletterSubmit = (event) => {
@@ -161,6 +165,15 @@ filterChips.forEach((chip) => chip.addEventListener('click', handleFilterClick))
 productGrid.addEventListener('click', handleProductClick);
 navToggle.addEventListener('click', handleNavToggle);
 newsletterForm.addEventListener('submit', handleNewsletterSubmit);
+
+document.addEventListener('click', (event) => {
+  if (!navList.classList.contains('is-open')) return;
+
+  const clickedInsideNav = navList.contains(event.target) || navToggle.contains(event.target);
+  if (!clickedInsideNav) {
+    closeNav();
+  }
+});
 
 navLinks.forEach((link) =>
   link.addEventListener('click', () => {
