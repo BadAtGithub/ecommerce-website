@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PixelCrafted – Digital Branding Kits for Visionaries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="#hero-title" aria-label="PixelCrafted home">
+        <img src="assets/img/pixelcrafted-logo.svg" alt="PixelCrafted" width="140" height="32" />
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul id="nav-links">
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#testimonials">Stories</a></li>
+          <li><a href="#newsletter">Join</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <button class="action-btn" aria-label="View search"><span class="icon">🔍</span></button>
+        <button class="action-btn" aria-label="View wishlist"><span class="icon">♡</span></button>
+        <button class="action-btn cart-btn" aria-label="Open cart">
+          <span class="icon">🛒</span>
+          <span class="badge" data-cart-count>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="eyebrow">Branding Studio</p>
+          <h1 id="hero-title">Craft a visual identity with pixel-perfect precision</h1>
+          <p class="lead">PixelCrafted curates premium design kits so founders launch faster with cohesive logos, typography, and social assets.</p>
+          <div class="cta-group">
+            <a class="btn btn-primary" href="#featured">Browse design kits</a>
+            <a class="btn btn-secondary" href="#collections">See what&apos;s inside</a>
+          </div>
+        </div>
+        <div class="hero-media" role="presentation">
+          <div class="hero-card">
+            <div class="tag">Launch Kit</div>
+            <h2>Monochrome Momentum</h2>
+            <p>$620 · Includes logo suite &amp; web style guide</p>
+          </div>
+          <div class="hero-card">
+            <div class="tag">Social Suite</div>
+            <h2>Neon Narrative Pack</h2>
+            <p>$280 · 90 editable templates</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="collections" id="collections" aria-labelledby="collections-title">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="collections-title">Signature kits for standout brands</h2>
+          <p>Curated palettes, font pairings, and mockups built to translate seamlessly from pitch decks to product launches.</p>
+        </div>
+        <div class="collection-grid">
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Laptop with colorful UI design elements" />
+            <div class="card-content">
+              <h3>Studio Flux</h3>
+              <p>Bold gradients and kinetic layouts for tech disruptors ready to own the spotlight.</p>
+              <a class="text-link" href="#">Preview kit →</a>
+            </div>
+          </article>
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=900&q=80" alt="Designer working on brand moodboard" />
+            <div class="card-content">
+              <h3>Calm Current</h3>
+              <p>Serene minimalism featuring airy typography and muted earth tones for wellness brands.</p>
+              <a class="text-link" href="#">See components →</a>
+            </div>
+          </article>
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1522199997878-95f2072e0b83?auto=format&fit=crop&w=900&q=80" alt="Printed brand collateral with geometric shapes" />
+            <div class="card-content">
+              <h3>Geometric Origin</h3>
+              <p>Modular identity system with grid-based patterns and versatile icon sets.</p>
+              <a class="text-link" href="#">Explore assets →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured" id="featured" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="featured-title">New in the library</h2>
+          <div class="filters" role="group" aria-label="Filter design kits by category">
+            <button class="chip is-active" data-filter="all">All</button>
+            <button class="chip" data-filter="branding">Branding</button>
+            <button class="chip" data-filter="social">Social</button>
+            <button class="chip" data-filter="web">Web</button>
+          </div>
+        </div>
+        <div class="product-grid" role="list" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="perks" aria-labelledby="perks-title">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="perks-title">Why build with PixelCrafted?</h2>
+        </div>
+        <div class="perks-grid">
+          <article>
+            <h3>Expertly curated assets</h3>
+            <p>Each kit is assembled by senior brand designers and tested across digital and print touchpoints.</p>
+          </article>
+          <article>
+            <h3>Unlimited revisions</h3>
+            <p>Edit colors, typography, and layouts with customizable Figma and Adobe files included.</p>
+          </article>
+          <article>
+            <h3>License-ready deliverables</h3>
+            <p>Commercial usage is covered out of the box, so you can launch campaigns without legal headaches.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="testimonials-title">Loved by founders and creatives</h2>
+        </div>
+        <div class="testimonial-grid">
+          <figure>
+            <blockquote>“Our rebrand launched in half the time. The templates made our pitch deck sing.”</blockquote>
+            <figcaption>— Amira R., Creative Director</figcaption>
+          </figure>
+          <figure>
+            <blockquote>“The social pack keeps our channels consistent and on-message without hiring extra help.”</blockquote>
+            <figcaption>— Jordan T., Content Lead</figcaption>
+          </figure>
+          <figure>
+            <blockquote>“Finally, a brand kit that feels premium and is ready to ship to our printers the same day.”</blockquote>
+            <figcaption>— Lee K., Founder</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
+      <div class="container">
+        <div class="newsletter-card">
+          <div class="card-text">
+            <h2 id="newsletter-title">Join the PixelCrafted dispatch</h2>
+            <p>Get early previews of fresh kits, workflow tutorials, and color trend reports every month.</p>
+          </div>
+          <form class="newsletter-form" aria-label="Newsletter signup form">
+            <label class="sr-only" for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            <button type="submit" class="btn btn-primary">Notify me</button>
+            <p class="form-feedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <a class="logo" href="#hero-title" aria-label="PixelCrafted home">
+          <img src="assets/img/pixelcrafted-logo.svg" alt="PixelCrafted" width="140" height="32" />
+        </a>
+        <p>PixelCrafted curates design systems so your brand shows up sharp across every touchpoint.</p>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Customer care</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Brand usage rights</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow</h3>
+        <ul class="social">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Behance</a></li>
+          <li><a href="#">Dribbble</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">© <span data-year></span> PixelCrafted. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
